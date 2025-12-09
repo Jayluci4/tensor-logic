@@ -189,7 +189,7 @@ python scripts/train.py --device cuda
 | Hallucination control | Cannot guarantee | Zero at T=0 |
 | Reasoning transparency | Black box | Full provenance |
 | Principled refusal | Always outputs | Returns UNKNOWN |
-Flexibility: LLMs = High (Open Domain) | Tensor Logic = Low (Strict Schema Required)
+Flexibility | LLMs = High (Open Domain) | Tensor Logic = Low (Strict Schema Required)
 
 ## Spectral Analysis
 
