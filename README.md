@@ -189,6 +189,7 @@ python scripts/train.py --device cuda
 | Hallucination control | Cannot guarantee | Zero at T=0 |
 | Reasoning transparency | Black box | Full provenance |
 | Principled refusal | Always outputs | Returns UNKNOWN |
+Flexibility: LLMs = High (Open Domain) | Tensor Logic = Low (Strict Schema Required)
 
 ## Spectral Analysis
 
@@ -200,6 +201,11 @@ Learned relation matrices exhibit structure:
 | grandparent | 17 | 48% |
 
 Note: Composed relations (grandparent = parent @ parent) have **lower rank**, as expected from matrix algebra. This is evidence the model learned true compositional structure.
+## Limitations & Critical Analysis
+While the system achieves perfect scores on the Family Tree dataset, users should be aware of the following constraints regarding scaling:
+​Closed World Assumption: The "Zero Hallucination" guarantee relies on the assumption that all valid relations can be strictly defined by matrix rules.
+​Data Rigidity: Unlike LLMs, this architecture struggles with noisy or unstructured text data where relations are ambiguous.
+​Computational Cost: The matrix operations for rule compliance grow significantly with the number of relations, making this difficult to apply to open-domain knowledge bases.
 
 ## References
 
